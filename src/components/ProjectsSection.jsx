@@ -82,42 +82,41 @@ const TransferSlabIcon = () => (
 );
 
 const ProjectsSection = () => {
-
   const projectTypes = [
     {
-      title: 'Residential High-Rises',
-      description: 'Slimmer slabs, reduced reinforcement, shorter cycles, and improved height efficiency.',
+      title: 'Hospitals',
+      description: 'These projects need fast, disruption-free construction and long, flexible floor plans. That\'s why the demand for PT systems in hospitals is consistently high.',
       icon: BuildingIcon
     },
     {
-      title: 'Commercial & Corporate Buildings',
-      description: 'Large column-free spaces, flexible office planning, and optimised floor grids.',
+      title: 'Office Buildings',
+      description: 'Commercial spaces are always chasing maximum usable area and higher rental value. Developers prefer PT because it delivers open floors that sell and lease faster.',
       icon: CorporateIcon
     },
     {
-      title: 'IT Parks & Data Centres',
-      description: 'High load-carrying capacity, tighter deflection control, and uninterrupted spans.',
-      icon: DataCenterIcon
+      title: 'Residential Buildings',
+      description: 'Residential builders focus on faster possession dates and controlled construction costs. PT helps them achieve quicker slab cycles and reduced material usage.',
+      icon: BuildingIcon
     },
     {
-      title: 'Industrial Structures & Warehouses',
-      description: 'Greater durability, higher strength, and rapid on-site execution.',
+      title: 'Skyscrapers',
+      description: 'High-rise developers can\'t afford bulky, inefficient structural systems. They need lightweight, high-performance slabs — which is why PT is the go-to choice.',
+      icon: CorporateIcon
+    },
+    {
+      title: 'Industrial Buildings',
+      description: 'Factories and warehouses require uninterrupted floor areas and high load-carrying slabs. PT meets these needs directly, keeping it in steady demand.',
       icon: WarehouseIcon
     },
     {
-      title: 'Hotels & Mixed-Use Developments',
-      description: 'Architectural freedom for premium layouts, amenities, and complex slab profiles.',
-      icon: HotelIcon
+      title: 'Foundation Slab',
+      description: 'Foundation work demands high strength, crack control, and long-term durability. PT systems deliver thinner, stronger slabs that handle heavy structural loads.',
+      icon: DataCenterIcon
     },
     {
-      title: 'Podiums & Parking Structures',
-      description: 'Larger bays, fewer beams, smoother circulation, and reduced overall height.',
+      title: 'Basements',
+      description: 'Basement construction faces height restrictions and heavy loads. PT solutions are widely preferred because they reduce slab thickness and simplify layouts.',
       icon: ParkingIcon
-    },
-    {
-      title: 'Transfer Slabs & Heavy-Load Slabs',
-      description: 'Superior crack control, reliable performance, and efficient force distribution.',
-      icon: TransferSlabIcon
     }
   ];
 
@@ -138,7 +137,9 @@ const ProjectsSection = () => {
       <div className="projects-container">
         {/* Section Title */}
         <div className="section-title-wrapper">
+          <span className="section-label">OUR EXPERTISE</span>
           <h2 className="section-main-title">HOW OUR SYSTEMS ADD VALUE ACROSS PROJECT TYPES</h2>
+          <div className="title-underline"></div>
         </div>
 
         {/* Header Section */}
@@ -154,18 +155,35 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="cards-grid-wrapper">
-          <div className="cards-grid">
-            {projectTypes.map((project, index) => {
+        {/* Bento Grid */}
+        <div className="bento-grid">
+          {/* First Row - 3 cards */}
+          <div className="bento-row bento-row-3">
+            {projectTypes.slice(0, 3).map((project, index) => {
               const IconComponent = project.icon;
               return (
-                <div key={index} className="project-card">
-                  <div className="card-icon">
+                <div key={index} className="bento-card">
+                  <div className="bento-icon">
                     <IconComponent />
                   </div>
-                  <h3 className="card-title">{project.title}</h3>
-                  <p className="card-description">{project.description}</p>
+                  <h3 className="bento-title">{project.title}</h3>
+                  <p className="bento-description">{project.description}</p>
+                </div>
+              );
+            })}
+          </div>
+          
+          {/* Second Row - 4 cards */}
+          <div className="bento-row bento-row-4">
+            {projectTypes.slice(3, 7).map((project, index) => {
+              const IconComponent = project.icon;
+              return (
+                <div key={index} className="bento-card">
+                  <div className="bento-icon">
+                    <IconComponent />
+                  </div>
+                  <h3 className="bento-title">{project.title}</h3>
+                  <p className="bento-description">{project.description}</p>
                 </div>
               );
             })}

@@ -1,3 +1,20 @@
+/* CSS Variables for Navbar Height */
+:root {
+  --navbar-height: 140px;
+}
+
+@media (max-width: 992px) {
+  :root {
+    --navbar-height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --navbar-height: 100px;
+  }
+}
+
 .page-container {
   min-height: calc(100vh - 150px);
   display: flex;
@@ -21,4 +38,15 @@
   font-size: 18px;
   color: #666;
   letter-spacing: 1px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
 }

@@ -44,11 +44,11 @@ const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+      setCurrentSlide((prev) => (prev + 1) % 4); // 4 slides
+    }, 8000); // 8 seconds - very slow slide transition
 
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, []); // Empty dependency - run only once
 
   // Scroll animation for numbers
   useEffect(() => {
@@ -189,8 +189,8 @@ const Hero = () => {
         <div 
           className="hero-left"
           style={{
-            transform: `translateX(-${scrollProgress * 100}%)`,
-            transition: 'transform 0.1s ease-out'
+            transform: `translateY(${scrollProgress * 50}px)`,
+            opacity: 1 - scrollProgress * 0.5
           }}
         >
           <div className="hero-image-card">
@@ -225,8 +225,8 @@ const Hero = () => {
         <div 
           className="hero-right"
           style={{
-            transform: `translateX(${scrollProgress * 100}%)`,
-            transition: 'transform 0.1s ease-out'
+            transform: `translateY(${scrollProgress * 80}px)`,
+            opacity: 1 - scrollProgress * 0.6
           }}
         >
           {/* Statistics Section - White Card */}
